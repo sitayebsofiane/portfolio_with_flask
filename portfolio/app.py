@@ -19,6 +19,15 @@ def cv():
     # retourne un template page html
     return render_template('pages/cv.html')
 
+@app.route('/motivation')
+def motivation():
+    # retourne un template page html
+    return render_template('pages/motivation.html')
+
+@app.route('/service')
+def service():
+    # retourne un template page html
+    return render_template('pages/service.html')
 
 
 """ gestion d'erreur 404 """
