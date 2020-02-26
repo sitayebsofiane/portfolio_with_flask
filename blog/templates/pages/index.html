@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-       <link rel="stylesheet" href="style.css">
-        <title>CV</title>
-</head>
-<body>
-    {% include 'partials/_nav.html' %}
+{% extends 'layouts/default.html' %}
+   
+   {% block body %}
     <section class="cv">
     <h1 class ="center">DEVELOPPEUR WEB/DATA</h1>
     <div class="container-fluid">
@@ -91,5 +82,4 @@
     </div>
     <script src="script.js"></script>
     </section>
-</body>
-</html>
+{% endblock body %}
