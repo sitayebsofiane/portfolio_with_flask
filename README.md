@@ -1,5 +1,6 @@
 # portfolio 
-> __ dans ce portfolio il ya: __
+
+> **dans ce portfolio il ya:**
 
 - Une page où vous présentez vos travaux
 - Une page où vous parlez un peu de vous
@@ -7,7 +8,7 @@
 - Un menu simple et clair
 - Une présentation organisée et concise des informations
 
-> __ in  this portfolio they have: __ 
+> **in  this portfolio they have:**
 
 - A page where you present your work
 - A page where you talk a little about yourself
