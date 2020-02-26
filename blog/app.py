@@ -19,6 +19,8 @@ def cv():
     # retourne un template page html
     return render_template('pages/index.html')
 
+
+
 """ gestion d'erreur 404 """
 @app.errorhandler(404)
 def page_not_found(error):

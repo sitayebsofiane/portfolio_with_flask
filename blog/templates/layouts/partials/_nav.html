@@ -1,7 +1,7 @@
 <nav>
-    <ul>
-        <li class="menu"><a href="/"><i class="fas fa-home fa-2x">Home</i></a></li>
-        <li class="menu"><a href="/about"><i class="fas fa-address-card fa-2x">About me</i></a></li>
-        <li class="menu"><a href="/index"><i class="fas fa-university fa-2x">CV</i></a></li>
+    <ul class="row">
+        <li class="col-md-4"><a href="{{url_for('home')}}"><i class="fas fa-home fa-2x">Home</i></a></li>
+        <li class="col-md-4"><a href="{{url_for('about')}}"><i class="fas fa-address-card fa-2x">About me</i></a></li>
+        <li class="col-md-4"><a href="{{url_for('cv')}}"><i class="fas fa-university fa-2x">CV</i></a></li>
     </ul>
 </nav>

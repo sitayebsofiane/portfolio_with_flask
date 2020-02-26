@@ -48,8 +48,24 @@
         display: flex;
     }
     </style>
-    {% include 'partials/_nav.html' %}
+    {% include 'layouts/partials/_nav.html' %}
     {% block body %}{% endblock body %}
+    <script>
+        var myCitation="aprés plusieurs fromations DEVELOPPEUR WEB je recherche un poste qui me permettra de continuer "+
+ "mon évolution et d'exprimer ma curiositée pour les nouvelles technologies";
+var myArray=myCitation.split("");
+var timeLooper;
+function loop(){
+    if(myArray.length>0){
+        document.getElementById("citation").innerHTML +=myArray.shift();
+    }else{
+        clearTimeout(timeLooper);
+    }
+    timeLooper=setTimeout('loop()',70);
+};
+loop();
+
+    </script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
 </html>
