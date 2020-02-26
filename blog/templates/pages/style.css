@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(153, 152, 122);
+    margin: auto;
+    font-family: Verdana;
+}
+
+#left{
+    min-height: 100vh;
+    background-color: rgb(241, 234, 241);
+    border:rgb(241, 234, 241) solid 1px;
+    border-radius: 1% 1%;
+   
+}
+.center{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(30, 34, 33);
+}
+.cv{
+    border: 1px solid white;
+    border-radius: 10% 10% 0% 0%;
+    padding: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.motivation{
+    font-size: 20px;
+}
+a {
+    cursor: crosshair;
+}
+.circle{
+    background-color: antiquewhite;
+    border: 1px solid red;
+    position: relative;
+    left: 0px;
+    width: 100px;
+    margin:auto;
+}
+.circle > svg {
+    display: block;
+    margin: auto;
+  
+}
