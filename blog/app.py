@@ -14,10 +14,10 @@ def about():
 
     return render_template('pages/about.html')
     
-@app.route('/index')
+@app.route('/cv')
 def cv():
     # retourne un template page html
-    return render_template('pages/index.html')
+    return render_template('pages/cv.html')
 
 
 
