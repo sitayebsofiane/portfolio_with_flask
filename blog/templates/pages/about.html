@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>about</title>
-</head>
-<body>
+{% extends 'layouts/default.html' %}
+   
+{% block body %}
+ {% include 'partials/_nav.'}
   {% include 'partials/_nav.html' %}
     <h1>about</h1>
     <p> 
@@ -12,5 +9,4 @@
         doloremque suscipit delectus sequi cumque dolore modi nam eum maxime unde adipisci eius earum?
     </p>
     
-</body>
-</html>
+{% endblock body %}
