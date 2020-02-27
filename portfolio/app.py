@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,abort
 
 app = Flask(__name__)
 
@@ -23,23 +23,20 @@ def service():
     return render_template('pages/service.html')
 
 #---------------------------------------------------------blog----------------------------------------------------------
-posts = list()
+from post import Post
+
 @app.route('/blog')
 def blog():
-    global posts
-    posts =[
-        {'id':1,'title':'frist post','content':'this my frist post'},
-        {'id':2,'title':'second post','content':'this my second post'},
-        {'id':3,'title':'third post','content':'this my third post'},
-    ]
-    return render_template('posts/index.html',bruno = posts)
-
+    return render_template('posts/index.html',bruno = Post.all())
+      
 #<id> c'est un parametre qui va etre reçu par la fonction
 @app.route('/blog/posts/<int:id>')
 def posts_show(id):
-    
-    post = posts[id-1]
-    return render_template('posts/show.html',bruno = post)
+    try:
+        post = Post.find(id)
+        return render_template('posts/show.html',bruno = post)
+    except:
+        abort(404)
 
 
 
