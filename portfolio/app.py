@@ -36,7 +36,8 @@ def blog():
 
 #<id> c'est un parametre qui va etre reçu par la fonction
 @app.route('/blog/posts/<int:id>')
-def post(id):
+def posts_show(id):
+    
     post = posts[id-1]
     return render_template('posts/show.html',bruno = post)
 
