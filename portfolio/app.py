@@ -1,22 +1,11 @@
 from flask import Flask,render_template
 
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def home():
 
     return render_template('pages/home.html')
-
-@app.route('/about')
-def about():
-    posts =[
-        {'id':1,'title':'frist post','content':'this my frist post'},
-        {'id':2,'title':'second post','content':'this my second post'},
-        {'id':3,'title':'third post','content':'this my third post'},
-    ]
-    return render_template('pages/about.html',bruno = posts)
     
 @app.route('/cv')
 def cv():
@@ -32,6 +21,25 @@ def motivation():
 def service():
     # retourne un template page html
     return render_template('pages/service.html')
+
+#---------------------------------------------------------blog----------------------------------------------------------
+posts = list()
+@app.route('/blog')
+def blog():
+    global posts
+    posts =[
+        {'id':1,'title':'frist post','content':'this my frist post'},
+        {'id':2,'title':'second post','content':'this my second post'},
+        {'id':3,'title':'third post','content':'this my third post'},
+    ]
+    return render_template('posts/index.html',bruno = posts)
+
+#<id> c'est un parametre qui va etre reçu par la fonction
+@app.route('/blog/posts/<int:id>')
+def post(id):
+    post = posts[id-1]
+    return render_template('posts/show.html',bruno = post)
+
 
 
 """ gestion d'erreur 404 """
