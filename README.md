@@ -1,7 +1,7 @@
 # portfolio 
 
 > **dans ce portfolio il ya:**
-
+<img src="home.png" width="350" alt="accessibility text">
 - Une page où vous présentez vos travaux
 - Une page où vous parlez un peu de vous
 - Une page pour vous contacter
@@ -15,4 +15,4 @@
 - A page to contact you- A simple and clear menu
 - An organized and concise presentation of information
 
- <img src="home.png" width="350" alt="accessibility text">
+ 
