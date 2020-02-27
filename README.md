@@ -11,8 +11,8 @@
 
 > **in  this portfolio they have:**
 
-- A page where you present my work
-- A page where you talk a little about myself
+- A page where i present my work
+- A page where i talk a little about myself
 - A page to contact me
 - A simple and clear menu
 - An organized and concise presentation of information
