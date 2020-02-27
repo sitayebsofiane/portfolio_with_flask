@@ -8,6 +8,15 @@ app = Flask(__name__)
 def home():
 
     return render_template('pages/home.html')
+
+@app.route('/about')
+def about():
+    posts =[
+        {'id':1,'title':'frist post','content':'this my frist post'},
+        {'id':2,'title':'second post','content':'this my second post'},
+        {'id':3,'title':'third post','content':'this my third post'},
+    ]
+    return render_template('pages/about.html',bruno = posts)
     
 @app.route('/cv')
 def cv():

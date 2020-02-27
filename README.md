@@ -14,3 +14,5 @@
 - A page where you talk a little about yourself
 - A page to contact you- A simple and clear menu
 - An organized and concise presentation of information
+
+<img src="home.png"/>
