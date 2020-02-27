@@ -5,49 +5,49 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 </head>
 <body>
-    <style>
-    body{
-        background-color: rgb(153, 152, 122);
-        margin: auto;
-        font-family: Verdana;
-    }
-    
-    #left{
-        min-height: 100vh;
-        background-color: rgb(241, 234, 241);
-        border:rgb(241, 234, 241) solid 1px;
-        border-radius: 1% 1%;
-       
-    }
-    .center{
-        text-align: center;
-        text-decoration: underline;
-        color: rgb(30, 34, 33);
-    }
-    .cv{
-       
-        padding: 20px;
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-    .motivation{
-        font-size: 20px;
-    }
-    a:hover {
-    
-        /*cursor: crosshair;*/
-        /*border: 1px solid rgb(255, 255, 255);*/
-        color:red;
-    }
-    .menu{
-        display: flex;
-    }
-    </style>
+    <!-- <style>
+             body{
+                background-color: rgb(153, 152, 122);
+                margin: auto;
+                font-family: Verdana;
+            }
+            
+            #left{
+                min-height: 100vh;
+                background-color: rgb(241, 234, 241);
+                border:rgb(241, 234, 241) solid 1px;
+                border-radius: 1% 1%;
+            
+            }
+            .center{
+                text-align: center;
+                text-decoration: underline;
+                color: rgb(30, 34, 33);
+            }
+            .cv{
+            
+                padding: 20px;
+                margin-right: 5%;
+                margin-left: 5%;
+            }
+            .motivation{
+                font-size: 20px;
+            }
+            a:hover {
+            
+                /*cursor: crosshair;*/
+                /*border: 1px solid rgb(255, 255, 255);*/
+                color:red;
+            }
+            .menu{
+                display: flex;
+            } 
+    </style> -->
     {% include 'layouts/partials/_nav.html' %}
     {% block body %}{% endblock body %}
     <script>
