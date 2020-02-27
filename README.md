@@ -15,4 +15,4 @@
 - A page to contact you- A simple and clear menu
 - An organized and concise presentation of information
 
-<img src="home.png"/>
+ <img src="home.png" width="350" alt="accessibility text">
