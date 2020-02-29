@@ -5,11 +5,14 @@ class Post:
         {'id':2,'title':'second post','content':'this my second post'},
         {'id':3,'title':'third post','content':'this my third post'},
     ]
-
+   
     @classmethod
     def all(cls):
         return cls.POSTS
 
     @classmethod
     def find(cls,id):
-        return cls.POSTS[int(id)-1]
+        try:
+            return cls.POSTS[int(id)-1]
+        except:
+            return None
