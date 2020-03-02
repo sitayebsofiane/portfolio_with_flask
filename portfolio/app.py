@@ -54,7 +54,7 @@ def posts_show(id):
         return render_template('posts/show.html',bruno = Post.find(id))
     except:
         abort(404)
-
+#sera present sur tout le projet
 @app.context_processor
 def inject_now():
    
