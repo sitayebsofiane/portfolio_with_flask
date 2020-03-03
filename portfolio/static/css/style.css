@@ -1,16 +1,9 @@
-
 body{
-    background-color: rgb(153, 152, 122);
+    position: relative;
+    background-color: rgb(183, 202, 201);
     margin: auto;
     font-family: Verdana;
-}
-
-#left{
     min-height: 100vh;
-    background-color: rgb(241, 234, 241);
-    border:rgb(241, 234, 241) solid 1px;
-    border-radius: 1% 1%;
-   
 }
 .center{
     text-align: center;
@@ -18,7 +11,7 @@ body{
     color: rgb(30, 34, 33);
 }
 .cv{
-   
+
     padding: 20px;
     margin-right: 5%;
     margin-left: 5%;
@@ -31,7 +24,26 @@ a:hover {
     /*cursor: crosshair;*/
     /*border: 1px solid rgb(255, 255, 255);*/
     color:red;
+    
 }
+a:link
+    {
+    text-decoration:none;
+    }
 .menu{
     display: flex;
+} 
+img{
+    width: 100px;
+    height: 100px;
+}
+footer{
+    position: absolute;
+    
+    width:100%;
+    left: 0px;
+    bottom: 0px;
+}
+.all_posts{
+    font-size:50px;
 }
