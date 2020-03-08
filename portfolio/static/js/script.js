@@ -8,6 +8,13 @@ function loop(){
     }else{
         clearTimeout(timeLooper);
     }
-    timeLooper=setTimeout('loop()',70);
+    timeLooper=setTimeout("loop()",70);
 };
 loop();
+// message d'erreur
+function cv(){
+var message = document.getElementById("message");
+message.textContent = "Aha !malin tu veut voir mon cv sans donner le nom de ton entreprise!";
+}
+var entreprise = document.getElementById("nom").nodeValue;
+alert(cv);
