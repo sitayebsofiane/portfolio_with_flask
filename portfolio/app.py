@@ -1,18 +1,22 @@
-from flask import Flask,render_template,abort
+from flask import Flask,render_template,abort,request,redirect
 import datetime
 app = Flask(__name__)
 
 
-@app.route('/admin/<password>')
-def admin(password):
-    if password == 1:
-        return render_template('admin/admin.html')
-    else:
-        return render_template('admin/non_autorise.html')
+@app.route('/admin')
+def login():
+    
+    return render_template('/admin/login.html')
+   
+#------------------------------------test------------------------------------------------
+
+
+#----------------------------------------------------------------------------------------
 
 @app.route('/')
 def home():
     return render_template('pages/home.html')
+
 
 @app.route('/service')
 def service():
