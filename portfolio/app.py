@@ -1,5 +1,8 @@
 from flask import Flask,render_template,abort,request,redirect
 import datetime
+from Pillow import Image
+from StringIO import StringIO
+
 app = Flask(__name__)
 
 #-----------------------------------------admin------------------------------------------
@@ -8,7 +11,9 @@ def login():
     return render_template('admin/login.html')
 #---------------------------------------- end admin--------------------------------------
 #------------------------------------test------------------------------------------------
-
+@app.route('/test')
+def test():
+    return render_template('admin/test.html')
 
 #----------------------------------------------------------------------------------------
 #-----------------------------------------visitor--------------------------------------------
