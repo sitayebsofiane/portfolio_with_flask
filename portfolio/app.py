@@ -6,23 +6,15 @@ app = Flask(__name__)
 def home():
 
     return render_template('pages/home.html')
-    
-@app.route('/cv')
-def cv():
-    # retourne un template page html
-    return render_template('pages/cv.html')
-
-@app.route('/motivation')
-def motivation():
-    # retourne un template page html
-    return render_template('pages/motivation.html')
 
 @app.route('/service')
 def service():
     # retourne un template page html
     return render_template('pages/service.html')
 
-
+@app.context_processor
+def inject_now():
+    return dict(now=datetime.datetime.now().year)
 
 """ gestion d'erreur 404 """
 @app.errorhandler(404)
