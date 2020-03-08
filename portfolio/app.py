@@ -1,7 +1,8 @@
-from flask import Flask,render_template,abort,request,redirect
+from flask import Flask,render_template,abort,request,redirect,make_response
 import datetime
 from PIL import Image
-from StringIO import StringIO
+
+
 
 app = Flask(__name__)
 
@@ -14,11 +15,11 @@ def login():
 @app.route('/test')
 def test():
     return render_template('admin/test.html')
+
 @app.route('/image')
 def genere_image():
-    mon_image = StringIO()
-    Image.new("RGB", (300,300), "#92C41D").save(mon_image, 'BMP')
-    return mon_image.getvalue()
+    
+    return "reponse"
 
 #----------------------------------------------------------------------------------------
 #-----------------------------------------visitor--------------------------------------------
