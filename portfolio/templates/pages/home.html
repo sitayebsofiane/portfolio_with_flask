@@ -1,6 +1,6 @@
 
 {% extends 'layouts/default.html' %}
-   
+{% block title %} Home {% endblock title%}
    {% block body %}
      
     <h1> Welcome  my portfolio</h1>
@@ -25,5 +25,5 @@
            en œuvre pour que ces trente minutes ou ces deux heures vous donnent envie de revenir
        .  <br>Le jeune develloppeur que je suis ne voit pas de plus belle récompense au travail sincèrement fait !
     </blockquote>
-    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
