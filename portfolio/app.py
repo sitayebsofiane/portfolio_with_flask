@@ -2,17 +2,16 @@ from flask import Flask,render_template,abort,request,redirect
 import datetime
 app = Flask(__name__)
 
-
+#-----------------------------------------admin------------------------------------------
 @app.route('/admin')
 def login():
-    
-    return render_template('/admin/login.html')
-   
+    return render_template('admin/login.html')
+#---------------------------------------- end admin--------------------------------------
 #------------------------------------test------------------------------------------------
 
 
 #----------------------------------------------------------------------------------------
-
+#-----------------------------------------visitor--------------------------------------------
 @app.route('/')
 def home():
     return render_template('pages/home.html')
@@ -26,7 +25,7 @@ def service():
 @app.context_processor
 def inject_now():
     return dict(now=datetime.datetime.now().year)
-
+#------------------------------------------end visitor-----------------------------------------
 """ gestion d'erreur 404 """
 @app.errorhandler(404)
 def page_not_found(error):
@@ -35,3 +34,4 @@ def page_not_found(error):
 
 if __name__ == '__main__':
     app.run(debug = True,host = '0.0.0.0',port = '5000')
+
