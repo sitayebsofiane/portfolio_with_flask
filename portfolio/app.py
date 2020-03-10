@@ -1,14 +1,14 @@
 from flask import *
+from portfolio.model.model import Model
 import datetime
-from PIL import Image
-
+model =Model('data')
 app = Flask(__name__)
 
 #-----------------------------------------admin------------------------------------------
 @app.route('/login')
 def login():
     return render_template('admin/login.html')
-email = 'hhhh'
+email = 'email@email'
 password='123'
 @app.route('/admin')
 def admin():
@@ -34,7 +34,10 @@ def home():
 
 @app.route('/service')
 def service():
-    return render_template('pages/service.html')
+    #model.add_service('application bureau','JAVA,PYTHON','tikinter, JFrame')
+    #model.delete_service('application bureau')
+    liste = model.display_all_service()
+    return render_template('pages/service.html',liste = liste)
 
 @app.context_processor
 def inject_now():

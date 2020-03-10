@@ -14,37 +14,16 @@
         </thead>
 
      
-        <tbody> 
+        <tbody>
+            {% for ele in liste %}
+            {% if ele.name != None %}
             <tr>
-                <td>sites vitrines</td>
-                <td>html,css,javascript,php</td>
-                <td>Wordpress</td>
+                <td>{{ele.name}}</td>
+                <td>{{ele.technologies}}</td>
+                <td>{{ele.outils}}</td>
             </tr>
-            <tr>
-                <td>applications</td>
-                <td>java,python</td>
-                <td>JFrame,tkinter,spring boot,flask</td>
-            </tr>
-            <tr>
-                <td>Resaux</td>
-                <td>model OSI,TCP/IP</td>
-                <td>packet tracer</td>
-            </tr>
-            <tr>
-                <td>Bases de donneés</td>
-                <td>sql,pl/sql</td>
-                <td>mySQL,postgesql</td>
-            </tr>
-            <tr>
-                <td>Analyse de donnée</td>
-                <td>python</td>
-                <td>panda bibliothèque</td>
-            </tr>
-            <tr>
-                <td>Gestion de projets</td>
-                <td>UML,merise,pert...</td>
-                <td>argoUML</td>
-            </tr>
+            {% endif %}
+        {% endfor %}
         </tbody>
      </table>
      <p>
