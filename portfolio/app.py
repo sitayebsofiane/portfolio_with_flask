@@ -5,19 +5,25 @@ import datetime
 model =Model('data')
 app = Flask(__name__)
 
+@app.context_processor
+def inject_now():
+    return dict(now=datetime.datetime.now().year)
 #-----------------------------------------admin------------------------------------------
-@app.route('/login')
+@app.route('/login',methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        pseudo = request.form['pseudo']
+        password = hashlib.sha1(request.form['password'].encode()).hexdigest()
+        if request.form['pseudo'] == 'bruno' and password =='6c435bc5c6a008f83a169597acdd3f7cbe6b1060':
+            return render_template('admin/admin.html')
+        else:
+            return redirect(url_for('login'))
     return render_template('admin/login.html')
-email = 'email@email'
-password = hashlib.sha1(b'bruno2020').digest()
-@app.route('/admin')
+
+@app.route('/admin',methods=['GET', 'POST'])
 def admin():
-    if email == 'email@email' and password != b'lC[\xc5\xc6\xa0\x08\xf8:\x16\x95\x97\xac\xdd?|\xbek\x10`':
-        return redirect(url_for('login'))
-    elif email != 'email@email': 
-        abort(401)
-    return render_template('admin/admin.html')
+    if request.method == 'POST':
+        return "Vous avez envoyé : {msg}".format(msg=request.form)
 
 #---------------------------------------- end admin--------------------------------------
 
@@ -32,10 +38,6 @@ def service():
     #model.delete_service('application bureau')
     liste = model.display_all_service()
     return render_template('pages/service.html',liste = liste)
-
-@app.context_processor
-def inject_now():
-    return dict(now=datetime.datetime.now().year)
 #------------------------------------------end visitor-----------------------------------------
 
 #---------------------------------------------------error---------------------------------------
@@ -43,11 +45,6 @@ def inject_now():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
-
-"""  gestion d'erreur 401 """
-@app.errorhandler(401)
-def non_autorise(error):
-    return render_template('errors/401.html'), 401
 #-----------------------------------------------end error---------------------------------------
 
 #-----------------------------------------------run---------------------------------------------
