@@ -1,11 +1,22 @@
-{% extends 'layouts/default.html' %}
-{% block title %} admin {% endblock title%}
-{% block body %}
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+</head>
+<body>
 <div class="container">
+    <div style="text-align:right">
+        <button type="button" class="btn btn-dark"><a href="{{url_for('login')}}">Deconnection</a></button>
+    </div>
     <div class="row d-flex justify-content-center">
         <div class="col-md-12 contact-form-wrapper">
-            <form method="post">
+            <form method="post" action="/admin">
                 <fieldset>
                     <legend>add new service</legend>
                     <div class="form-group">
@@ -28,7 +39,7 @@
     <br>
      <div class="row d-flex justify-content-center">
         <div class="col-md-12 contact-form-wrapper">
-            <form method="post">
+            <form method="post" action="/admin">
                 <fieldset>
                     <legend>delete service with his name</legend>
                     <div class="form-group">
@@ -41,5 +52,5 @@
         </div>
     </div>
 </div>
-
-{% endblock body %}
+</body>
+</html>

@@ -23,7 +23,11 @@ def login():
 @app.route('/admin',methods=['GET', 'POST'])
 def admin():
     if request.method == 'POST':
-        return "Vous avez envoyé : {msg}".format(msg=request.form)
+        model.add_service(request.form.get('name_add'),request.form.get('techno'),request.form.get('outils'))
+        model.delete_service(request.form.get('name_delete'))
+        return render_template('admin/admin.html')
+    else:
+        return redirect(url_for('login'))
 
 #---------------------------------------- end admin--------------------------------------
 
