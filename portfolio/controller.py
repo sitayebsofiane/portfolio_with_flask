@@ -2,7 +2,8 @@ from flask import *
 from portfolio.model.model import Model
 import hashlib
 import datetime
-model =Model('data')
+model =Model()
+#model.init_bdd()
 appli = Flask(__name__)
 
 @appli.context_processor
@@ -22,10 +23,17 @@ def login():
 
 @appli.route('/admin',methods=['GET', 'POST'])
 def admin():
-    if request.method == 'POST':
-        model.add_service(request.form.get('name_add'),request.form.get('techno'),request.form.get('outils'))
-        model.delete_service(request.form.get('name_delete'))
-        return render_template('admin/admin.html')
+    name_add = request.form.get('name_add')
+    techno = request.form.get('techno')
+    outils = request.form.get('outils')
+    name_delete = request.form.get('name_delete')
+    if  request.method == 'POST':
+        if  name_add!= None or techno != None or outils != None :
+            model.add_service(name_add,techno,outils)
+            return render_template('admin/admin.html')
+        elif name_delete != None:
+            model.delete_service(name_delete)
+            return render_template('admin/admin.html')
     else:
         return redirect(url_for('login'))
 
@@ -38,8 +46,6 @@ def home():
 
 @appli.route('/service')
 def service():
-    #model.add_service('application bureau','JAVA,PYTHON','tikinter, JFrame')
-    #model.delete_service('application bureau')
     liste = model.display_all_service()
     return render_template('pages/service.html',liste = liste)
 #------------------------------------------end visitor-----------------------------------------
